@@ -1,4 +1,5 @@
 import React, {Container} from 'react'
+import BookCard from './components/BookCard'
 
 class BookContainer extends Component {
   constructor() {

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 
-class Book extends Component {
+class BookCard extends Component {
 
 }
 
-export default connect()(Book);
+export default connect()(BookCard);
