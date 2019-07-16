@@ -1,23 +1,24 @@
 import React, {Component} from 'react'
 import BookCard from './components/BookCard'
+const API = 'http://localhost:3000/'
 
 class BookContainer extends Component {
   constructor() {
     super()
     this.state = {
-      books: []
+      books: [],
+      favorites: []
     }
   }
 
   componentDidMount() {
-    //put fetch function
-    this.setState({
-      books: books
-    })
+    fetch(API)
+    .then(res=> .json())
+    .then(books => this.setState({books: books}))
   }
 
   render() {
-    const bookCards = this.state.books.map(book => <BookCard />)
+    const bookCards = this.state.books.map(book => <BookCard key={book.title} book={book}/>)
   }
 }
 
