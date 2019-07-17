@@ -6,6 +6,7 @@ class AllBook extends Component {
   render() {
     return (
       <div>
+        //map book cards here
       </div>
     )
   }

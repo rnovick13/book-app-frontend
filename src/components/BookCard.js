@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const BookCard = ({book}) {
+const BookCard = ({book}) => {
   return(
     <div>
       <img height="100px" width="100px" src={book.cover} alt={book.title}/>
