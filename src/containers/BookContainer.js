@@ -13,8 +13,8 @@ class BookContainer extends Component {
 
   componentDidMount() {
     fetch(API)
-    .then(res => JSON())
-    .then(books => this.setState({books: books}))
+      .then(response => response.json())
+      .then(books => this.setState({books: books}))
   }
 
   render() {
