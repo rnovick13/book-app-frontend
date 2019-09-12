@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import BookCard from '../components/BookCard'
-const API = `http://localhost:3000/`
+const API = `http://localhost:3000/books`
+// import books from '../book-data'
 
 class BookContainer extends Component {
   constructor() {
@@ -20,8 +21,8 @@ class BookContainer extends Component {
   render() {
     const bookCards = this.state.books.map(book => <BookCard key={book.title} book={book}/>)
     return(
-    <div>bookCards</div>
-  )
+      <div>{bookCards}</div>
+    )
   }
 }
 
