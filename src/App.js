@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import BookContainer from './containers/BookContainer';
-// import NavBar from './components/NavBar';
 
 class App extends Component {
   render() {
