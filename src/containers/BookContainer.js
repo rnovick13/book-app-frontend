@@ -12,10 +12,14 @@ class BookContainer extends Component {
     }
   }
 
-  componentDidMount() {
+  fetchBooks(API) {
     fetch(API)
       .then(response => response.json())
       .then(books => this.setState({books: books}))
+  }
+
+  componentDidMount() {
+    fetchBooks(API)
   }
 
   render() {
