@@ -4,7 +4,7 @@ import FavoriteCard from '../components/FavoriteCard'
 class FavoriteContainer extends Component {
 
   render() {
-    const faveCards = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
+    const faveCards = this.props.favorite.map(favorite => <FavoriteCard key={favorite.id} favorite={favorite}/>)
     return(
       <div>{faveCards}</div>
     )

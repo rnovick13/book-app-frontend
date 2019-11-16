@@ -7,7 +7,7 @@ const FavoriteCard = ({favorite}) => {
     <div>
       <img height="100px" width="100px" src={favorite.book_id.cover} alt={favorite.book_id.title} />
       <p>{favorite.book_id.title}</p>
-      <p>{favorite.book_id.author_id.name}</p>
+      <p>{favorite.book_id.author}</p>
       <button>Reviews</button>
     </div>
   )
