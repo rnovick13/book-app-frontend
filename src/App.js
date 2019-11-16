@@ -24,6 +24,10 @@ class App extends Component {
       .then(favorites => this.setState({favorites: favorites}))
   }
 
+  // addFavorite() {
+  //   this.setState({favorites: e})
+  // };
+
 
 
   render() {
@@ -32,8 +36,8 @@ class App extends Component {
         <h1>Book Tracker</h1>
         <button>All Books</button>
         <button>Favorites</button>
-        <BookContainer books={this.state.books}/>
-        
+        <BookContainer books={this.state.books} />
+
       </div>
     )
   }
