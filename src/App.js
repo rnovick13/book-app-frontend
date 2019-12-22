@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import HomeContainer from './containers/HomeContainer';
 import BookContainer from './containers/BookContainer';
 import ShowBookCard from './components/ShowBookCard';
 // import FavoriteContainer from './containers/FavoriteContainer'
@@ -12,7 +13,8 @@ class App extends Component {
     super()
     this.state = {
       books: [],
-      favorites: []
+      favorites: [],
+      showBooks: true
     }
   }
 
@@ -45,8 +47,7 @@ class App extends Component {
         <h1>Book Tracker</h1>
         <button>All Books</button>
         <button>Favorites</button>
-        <BookContainer books={this.state.books} fetchIndvBook={() => this.fetchIndvBook()}/>
-        // <button onClick={this.handleClick}>Click Me</button>
+        <HomeContainer books={this.state.books} favorites={this.state.favorites} showBook={this.state.showBooks} fetchIndvBook={() => this.fetchIndvBook()}/>
       </div>
     )
   }
