@@ -31,8 +31,7 @@ class App extends Component {
     return(
       <div className="App">
         <h1>Book Tracker</h1>
-        <button>All Books</button>
-        <button>Favorites</button>
+        <h3>Book List</h3>
         <BookContainer books={this.state.books} />
 
       </div>
