@@ -30,11 +30,13 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        <h1>Book Tracker</h1>
-        <button>All Books</button>
-        <button>Favorites</button>
-        <BookContainer books={this.state.books} />
-
+        <div className="App-header">
+          <h1>Book Tracker</h1>
+        </div>
+        <div className= "Book-list">
+          <h3>Book List</h3>
+          <BookContainer books={this.state.books} />
+        </div>
       </div>
     )
   }
