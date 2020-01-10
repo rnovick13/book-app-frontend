@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import BookContainer from './BookContainer'
 import FavoriteContainer from './FavoriteContainer'
+const API = `http://localhost:3000`
 
 class HomeContainer extends Component {
     constructor(props) {
       super(props);
       this.handleBookClick = this.handleBookClick.bind(this);
       this.handleFavoriteClick = this.handleFavoriteClick.bind(this);
-      this.state = {showBook: true};
-    }
+      this.state = {
+        showBook: true,
+      };
+      }
 
     handleBookClick() {
       this.setState({showBook: true});
@@ -21,6 +24,7 @@ class HomeContainer extends Component {
     render() {
       const showBook = this.state.showBook;
       let button;
+      let container;
 
       if (showBook) {
         button = <FavoriteButton onClick={this.handleFavoriteClick} />;
@@ -28,21 +32,28 @@ class HomeContainer extends Component {
         button = <BookButton onClick={this.handleBookClick} />;
       }
 
+      if (showBook) {
+        container = <BookContainer books={this.props.books}/>;
+      } else {
+        container = <FavoriteContainer favorites={this.props.favorites}/>;
+      }
+
       return (
         <div>
           <Heading showBook={showBook} />
           {button}
+          {container}
         </div>
       );
     }
   }
 
   function AllHeading(props) {
-    return <h1>All of our books!</h1>;
+    return <h3>All of our books!</h3>;
   }
 
   function FavoriteHeading(props) {
-    return <h1>Your Favorites!</h1>;
+    return <h3>Your Favorites!</h3>;
   }
 
   function Heading(props) {
