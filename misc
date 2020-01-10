@@ -1,0 +1,6 @@
+fetchIndvBook(book) {
+  debugger
+  fetch(`http://localhost:3000/books/{book.id}`)
+    .then(response => response.json())
+    .then(book => <ShowBookCard book={this.book}/>)
+}

@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import BookContainer from './containers/BookContainer';
-// import FavoriteContainer from './containers/FavoriteContainer'
+import HomeContainer from './containers/HomeContainer'
 const API = `http://localhost:3000/books`
-// const API2 = `http://localhost:3000/favorites`
 
 class App extends Component {
 
@@ -21,10 +19,6 @@ class App extends Component {
       .then(books => this.setState({books: books}))
   }
 
-  // addFavorite() {
-  //   this.setState({favorites: e})
-  // };
-
 
 
   render() {
@@ -34,8 +28,7 @@ class App extends Component {
           <h1>Book Tracker</h1>
         </div>
         <div className= "Book-list">
-          <h3>Book List</h3>
-          <BookContainer books={this.state.books} />
+          <HomeContainer books={this.state.books} favorites={this.state.favorites} />
         </div>
       </div>
     )
