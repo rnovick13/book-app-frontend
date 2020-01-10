@@ -28,7 +28,6 @@ class App extends Component {
           <h1>Book Tracker</h1>
         </div>
         <div className= "Book-list">
-          <h3>Book List</h3>
           <HomeContainer books={this.state.books} favorites={this.state.favorites} />
         </div>
       </div>
