@@ -13,8 +13,7 @@ class App extends Component {
     super()
     this.state = {
       books: [],
-      favorites: [],
-      showBooks: true
+      favorites: []
     }
   }
 
@@ -47,7 +46,7 @@ class App extends Component {
         <h1>Book Tracker</h1>
         <button>All Books</button>
         <button>Favorites</button>
-        <HomeContainer books={this.state.books} favorites={this.state.favorites} showBook={this.state.showBooks} fetchIndvBook={() => this.fetchIndvBook()}/>
+        <HomeContainer books={this.state.books} favorites={this.state.favorites} fetchIndvBook={() => this.fetchIndvBook()}/>
       </div>
     )
   }

@@ -1,13 +1,73 @@
 import React, {Component} from 'react';
+import BookContainer from './BookContainer'
+import FavoriteContainer from './FavoriteContainer'
 
 class HomeContainer extends Component {
+    constructor(props) {
+      super(props);
+      this.handleBookClick = this.handleBookClick.bind(this);
+      this.handleFavoriteClick = this.handleFavoriteClick.bind(this);
+      this.state = {showBook: true};
+    }
 
-  render() {
-    return(
-    <div>
-    </div>
-  )
+    handleBookClick() {
+      this.setState({showBook: true});
+    }
+
+    handleFavoriteClick() {
+      this.setState({showBook: false});
+    }
+
+    render() {
+      const showBook = this.state.showBook;
+      let button;
+
+      if (showBook) {
+        button = <FavoriteButton onClick={this.handleFavoriteClick} />;
+      } else {
+        button = <BookButton onClick={this.handleBookClick} />;
+      }
+
+      return (
+        <div>
+          <Heading showBook={showBook} />
+          {button}
+        </div>
+      );
+    }
   }
-}
+
+  function AllHeading(props) {
+    return <h1>All of our books!</h1>;
+  }
+
+  function FavoriteHeading(props) {
+    return <h1>Your Favorites!</h1>;
+  }
+
+  function Heading(props) {
+    const showBook = props.showBook;
+    if (showBook) {
+      return <AllHeading />;
+    }
+    return <FavoriteHeading />;
+  }
+
+  function BookButton(props) {
+    return (
+      <button onClick={props.onClick}>
+        All Books
+      </button>
+    );
+  }
+
+  function FavoriteButton(props) {
+    return (
+      <button onClick={props.onClick}>
+        Favorites
+      </button>
+    );
+  }
+
 
 export default HomeContainer
