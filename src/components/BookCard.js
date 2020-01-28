@@ -9,7 +9,6 @@ const BookCard = ({book}) => {
       <img height="100px" width="100px" src={book.cover} alt={book.title} />
       <p>{book.title}</p>
       <button onClick={()=> this.props.addFavorite(book.id)}>Favorite</button>
-      <button>Reviews</button>
     </div>
   )
 }

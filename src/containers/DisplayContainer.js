@@ -4,7 +4,9 @@ class DisplayContainer extends Component {
 
   render() {
     return (
-      
+      <div>
+        <DisplayCard book={book}/>
+      </div>
     )
   }
 
