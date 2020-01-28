@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer'
+import DisplayContainer from './containers/DisplayContainer'
 const API = `http://localhost:3000/books`
 const IndBook = `http://localhost:3000/books/{id}`
 
@@ -36,6 +37,9 @@ class App extends Component {
         </div>
         <div className= "Book-list">
           <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()}/>
+        </div>
+        <div className= "Disply-Book">
+          <DisplayContainer />
         </div>
       </div>
     )
