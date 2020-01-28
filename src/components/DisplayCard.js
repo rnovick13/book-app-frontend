@@ -15,4 +15,4 @@ const DisplayCard = ({book}) => {
 }
 
 
-export default BookCard;
+export default DisplayCard;

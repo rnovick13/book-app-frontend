@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import DisplayCard from '../components/DisplayCard'
 
 class DisplayContainer extends Component {
 
