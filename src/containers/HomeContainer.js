@@ -32,7 +32,7 @@ class HomeContainer extends Component {
       }
 
       if (showBook) {
-        container = <BookContainer books={this.props.books}/>;
+        container = <BookContainer books={this.props.books} addFavorite={this.props.addFavorite}/>;
       } else {
         container = <FavoriteContainer favorites={this.props.favorites}/>;
       }
