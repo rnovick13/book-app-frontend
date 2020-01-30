@@ -6,7 +6,7 @@ class DisplayContainer extends Component {
   render() {
     return (
       <div>
-        <DisplayCard book={book}/>
+        <DisplayCard book={this.props.book}/>
       </div>
     )
   }

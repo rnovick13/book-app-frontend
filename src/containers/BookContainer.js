@@ -4,7 +4,7 @@ import BookCard from '../components/BookCard'
 class BookContainer extends Component {
 
   render() {
-    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book}/>)
+    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} getBook={this.props.getBook()}/>)
     return(
       <div>{bookCards}</div>
     )

@@ -11,11 +11,18 @@ class App extends Component {
     super()
     this.state = {
       books: [],
-      favorites: []
+      favorites: [],
+      display: []
     }
   }
 
   componentDidMount() {
+    fetch(API)
+      .then(response => response.json())
+      .then(books => this.setState({books: books}))
+  }
+
+  fetchAll() {
     fetch(API)
       .then(response => response.json())
       .then(books => this.setState({books: books}))
@@ -27,6 +34,11 @@ class App extends Component {
       .then(book => this.setState({favorites: book}))
   }
 
+  getBook(id){
+    fetch(`http://localhost:3000/books/{id}`)
+      .then(response => response.json())
+      .then(book => this.setState({display: book}))
+    }
 
 
   render() {
@@ -36,10 +48,10 @@ class App extends Component {
           <h1>Book Tracker</h1>
         </div>
         <div className= "Book-list">
-          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()}/>
+          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={()=>this.getBook()}/>
         </div>
         <div className= "Display-Book">
-          <DisplayContainer />
+          <DisplayContainer book={this.state.display}/>
         </div>
       </div>
     )

@@ -8,7 +8,7 @@ const DisplayCard = ({book}) => {
     <div>
       <img src={book.cover} alt={book.title} />
       <h3>{book.title}</h3>
-      <h4>{book.included.attributes.name}</h4>
+      <h4>{book.author.name}</h4>
       <h3>Reviews</h3>
     </div>
   )
