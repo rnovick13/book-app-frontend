@@ -30,6 +30,8 @@ class App extends Component {
         <div className= "Book-list">
           <HomeContainer books={this.state.books} favorites={this.state.favorites} />
         </div>
+        <div className="Book-Form">
+        </div>
       </div>
     )
   }
