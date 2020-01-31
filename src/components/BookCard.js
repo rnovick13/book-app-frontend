@@ -2,13 +2,13 @@ import React from 'react';
 
 
 
-const BookCard = ({book}) => {
+const BookCard = ({book, addFavorite, getBook}) => {
 
   return(
     <div>
-      <img height="100px" width="100px" src={book.cover} alt={book.title} onClick={()=>this.props.getBook(book.id)}/>
+      <img height="100px" width="100px" src={book.cover} alt={book.title} onClick={()=>getBook(book.id)}/>
       <p>{book.title}</p>
-      <button onClick={()=> this.props.addFavorite(book.id)}>Favorite</button>
+      <button onClick={()=> addFavorite(book.id)}>Favorite</button>
     </div>
   )
 }
