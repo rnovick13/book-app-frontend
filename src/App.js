@@ -34,7 +34,8 @@ class App extends Component {
       .then(book => this.setState({favorites: book}))
   }
 
-  getBook(id){
+  getBook = (id) => {
+    console.log('@@this', this)
     fetch(`http://localhost:3000/books/{id}`)
       .then(response => response.json())
       .then(book => this.setState({display: book}))
