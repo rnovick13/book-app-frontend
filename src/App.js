@@ -3,7 +3,6 @@ import './App.css';
 import HomeContainer from './containers/HomeContainer'
 import DisplayContainer from './containers/DisplayContainer'
 const API = `http://localhost:3000/books`
-const IndBook = `http://localhost:3000/books/{id}`
 
 class App extends Component {
 
@@ -29,14 +28,15 @@ class App extends Component {
   }
 
   addFavorite(id) {
-    fetch(IndBook)
+    const url = `http://localhost:3000/books/${id}`
+    fetch(url)
       .then(response => response.json())
       .then(book => this.setState({favorites: book}))
   }
 
   getBook = (id) => {
-    console.log('@@this', this)
-    fetch(`http://localhost:3000/books/{id}`)
+    const url = `http://localhost:3000/books/${id}`
+    fetch(url)
       .then(response => response.json())
       .then(book => this.setState({display: book}))
     }
@@ -52,7 +52,7 @@ class App extends Component {
           <DisplayContainer book={this.state.display}/>
         </div>
         <div className= "Book-list">
-          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={this.getBook}/>
+          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
         </div>
       </div>
     )
