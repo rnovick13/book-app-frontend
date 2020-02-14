@@ -49,7 +49,7 @@ class App extends Component {
           <h1>Book Tracker</h1>
         </div>
         <div className= "Display-Book">
-          <DisplayContainer book={this.state.display}/>
+          <DisplayContainer/>
         </div>
         <div className= "Book-list">
           <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
