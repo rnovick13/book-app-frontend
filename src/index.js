@@ -8,7 +8,7 @@ import bookReducer from './reducers/bookReducer'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-const store = createStore(reducer)
+const store = createStore(bookReducer)
 
 
 // If you want your app to work offline and load faster, you can change
