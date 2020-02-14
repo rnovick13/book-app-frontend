@@ -6,12 +6,17 @@ import * as serviceWorker from './serviceWorker';
 import {createStore, applyMiddleware, compose} from 'redux'
 import bookReducer from './reducers/bookReducer'
 import thunk from 'redux-thunk'
+import {Provider} from 'react-redux'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(bookReducer, composeEnhancers(applyMiddleware(thunk)))
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
