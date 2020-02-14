@@ -2,17 +2,11 @@ import React from 'react';
 
 
 
-const ReviewCard = () => {
-
-  function handleOnClick(id){
-
-    getBook(id)
-  }
+const ReviewCard = ({book}) => {
 
   return(
     <div>
-      <p>{review.name}</p>
-      <p>{review.body}</p>
+      
     </div>
   )
 }
