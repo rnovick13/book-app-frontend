@@ -1,4 +1,4 @@
-export default function bookReducer(state = {books: [], favorites: [], display: []}, action) {
+export default function bookReducer(state = {books: [], favorites: [], display: null}, action) {
 
   return state
 

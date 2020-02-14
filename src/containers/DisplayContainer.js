@@ -8,7 +8,7 @@ class DisplayContainer extends Component {
 
 
   render() {
-    const display = this.props.book;
+    const display = this.props.display;
     let container;
 
     if (display === null) {
@@ -27,7 +27,7 @@ class DisplayContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-
+    display: state.display
   }
 }
 
