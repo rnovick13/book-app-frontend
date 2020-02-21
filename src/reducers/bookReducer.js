@@ -1,4 +1,4 @@
-const bookReducer = (state = {books: [], favorites: [], display: null}, action) => {
+const bookReducer = (state = {books: [], display: null}, action) => {
   switch(action.type) {
 
     case 'FETCH_ALL':
