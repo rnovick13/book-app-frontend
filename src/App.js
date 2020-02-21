@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer'
 import DisplayContainer from './containers/DisplayContainer'
-const API = `http://localhost:3000/books`
+
 
 class App extends Component {
 
@@ -11,12 +11,6 @@ class App extends Component {
     this.state = {
       display: null
     }
-  }
-
-  componentDidMount() {
-    fetch(API)
-      .then(response => response.json())
-      .then(books => this.setState({books: books}))
   }
 
   addFavorite(id) {
@@ -32,7 +26,6 @@ class App extends Component {
       .then(response => response.json())
       .then(book => this.setState({display: book}))
     }
-
 
   render() {
     return(

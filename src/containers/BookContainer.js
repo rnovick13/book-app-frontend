@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import BookCard from '../components/BookCard'
 import {connect} from 'react-redux'
 import fetchAllBooks from '../actions/fetchAllBooks'
+import displayBook from '../actions/displayBook'
 
 
 class BookContainer extends Component {
@@ -11,7 +12,7 @@ class BookContainer extends Component {
   }
 
   render() {
-    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} getBook={(id)=>this.testGetBook(id)}/>)
+    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} displayBook={(id)=>this.props.displayBook(id)}/>)
     return(
       <div>{bookCards}</div>
     )
@@ -24,4 +25,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {fetchAllBooks})(BookContainer)
+export default connect(mapStateToProps, {fetchAllBooks}, {displayBook})(BookContainer)

@@ -2,11 +2,11 @@ import React from 'react';
 
 
 
-const BookCard = ({book, addFavorite, getBook}) => {
+const BookCard = ({book, addFavorite, displayBook}) => {
 
   function handleOnClick(id){
-    
-    getBook(id)
+
+    this.props.displayBook(id)
   }
 
   return(

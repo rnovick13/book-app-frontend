@@ -5,6 +5,8 @@ export default function bookReducer(state = {books: [], favorites: [], display: 
       return {...state, favorites: action.payload}
     case 'FETCH_ALL':
       return {...state, books: action.payload}
+    case 'DISPLAY_BOOK':
+      return {display: action.payload}
 
     default:
       return state
