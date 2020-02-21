@@ -9,18 +9,11 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      books: [],
       display: null
     }
   }
 
   componentDidMount() {
-    fetch(API)
-      .then(response => response.json())
-      .then(books => this.setState({books: books}))
-  }
-
-  fetchAll() {
     fetch(API)
       .then(response => response.json())
       .then(books => this.setState({books: books}))
@@ -51,7 +44,7 @@ class App extends Component {
           <DisplayContainer/>
         </div>
         <div className= "Book-list">
-          <HomeContainer books={this.state.books} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
+          <HomeContainer addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
         </div>
       </div>
     )
