@@ -1,10 +1,16 @@
 import React, {Component} from 'react'
 import BookCard from '../components/BookCard'
+import {connect} from 'react-redux'
+import fetchAllBooks from '../actions/fetchAllBooks'
 
 class BookContainer extends Component {
 
-  testGetBook(id){
-    this.props.getBook(id)
+  // testGetBook(id){
+  //   this.props.getBook(id)
+  // }
+
+  componentDidMount(){
+    this.props.fetchAllBooks()
   }
 
   render() {
@@ -15,4 +21,10 @@ class BookContainer extends Component {
   }
 }
 
-export default BookContainer
+const mapStateToProps = (state) => {
+  return {
+    books: state.books
+  }
+}
+
+export default connect(mapStateToProps, {fetchAllBooks})(BookContainer)

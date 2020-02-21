@@ -9,16 +9,9 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      books: [],
       favorites: [],
       display: null
     }
-  }
-
-  componentDidMount() {
-    fetch(API)
-      .then(response => response.json())
-      .then(books => this.setState({books: books}))
   }
 
   fetchAll() {
