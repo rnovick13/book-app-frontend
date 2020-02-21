@@ -10,7 +10,6 @@ class App extends Component {
     super()
     this.state = {
       books: [],
-      favorites: [],
       display: null
     }
   }
@@ -52,7 +51,7 @@ class App extends Component {
           <DisplayContainer/>
         </div>
         <div className= "Book-list">
-          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
+          <HomeContainer books={this.state.books} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
         </div>
       </div>
     )

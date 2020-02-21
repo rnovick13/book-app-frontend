@@ -38,7 +38,7 @@ class HomeContainer extends Component {
           getBook={(id)=>{ this.props.getBook(id)}}
         />;
       } else {
-        container = <FavoriteContainer favorites={this.props.favorites}/>;
+        container = <FavoriteContainer />;
       }
 
       return (

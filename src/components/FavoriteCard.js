@@ -5,7 +5,7 @@ const FavoriteCard = ({favorite}) => {
 
   return(
     <div>
-      <p>favorite</p>
+      <p>{favorite}</p>
       <button>Reviews</button>
     </div>
   )

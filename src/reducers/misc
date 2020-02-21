@@ -14,3 +14,35 @@ favorite card
 <img height="100px" width="100px" src={favorite.book_id.cover} alt={favorite.book_id.title} />
 <p>{favorite.book_id.title}</p>
 <p>{favorite.book_id.author_id.name}</p>
+
+
+
+addAnimal = (animal) => {
+  fetch('http://localhost:3000/reviews', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(animal)
+  })
+  .then(r => r.json())
+  .then(resp => {
+    this.setState({animals: [...this.state.animals, resp]})
+  })
+}
+
+deleteAnimal = (reviewId) => {
+  fetch(`http://localhost:3000/reviews/${reviewId}`, {
+    method: 'DELETE'
+  })
+  .then(r => r.json())
+  .then(resp -> {
+    this.setState({animals: this.state.animals.filter(animal => animal.id != resp.id)})
+  })
+}
+
+favorite = (animal) => {
+this.setState({favorites: [...this.state.favorites, animal]})
+}
+
+unfavorite = (animalId) => {
+  this.setState({favorites: this.state.favorites.filter(animal => animal.id != animalId)})
+}
