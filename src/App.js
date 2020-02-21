@@ -2,22 +2,14 @@ import React, {Component} from 'react';
 import './App.css';
 import HomeContainer from './containers/HomeContainer'
 import DisplayContainer from './containers/DisplayContainer'
-const API = `http://localhost:3000/books`
 
 class App extends Component {
 
   constructor() {
     super()
     this.state = {
-      favorites: [],
       display: null
     }
-  }
-
-  fetchAll() {
-    fetch(API)
-      .then(response => response.json())
-      .then(books => this.setState({books: books}))
   }
 
   addFavorite(id) {
@@ -45,7 +37,7 @@ class App extends Component {
           <DisplayContainer book={this.state.display}/>
         </div>
         <div className= "Book-list">
-          <HomeContainer books={this.state.books} favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
+          <HomeContainer favorites={this.state.favorites} addFavorite={()=> this.addFavorite()} getBook={(id)=>{this.getBook(id)}}/>
         </div>
       </div>
     )

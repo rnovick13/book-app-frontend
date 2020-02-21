@@ -5,9 +5,9 @@ import fetchAllBooks from '../actions/fetchAllBooks'
 
 class BookContainer extends Component {
 
-  // testGetBook(id){
-  //   this.props.getBook(id)
-  // }
+  testGetBook(id){
+    this.props.getBook(id)
+  }
 
   componentDidMount(){
     this.props.fetchAllBooks()
