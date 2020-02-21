@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReviewCard from '../components/ReviewCard'
-import ReviewForm from '../ReviewForm'
+
+import deleteReview from '../actions/deleteReview'
 
 class ReviewContainer extends Component {
 
@@ -12,7 +13,8 @@ class ReviewContainer extends Component {
   }
 
   componentDidMount(){
-    fetch(`http://localhost:3000/reviews/${book_id}`)
+    const bookId = this.props.book
+    fetch(`http://localhost:3000/reviews/${bookId}`)
     .then(response => response.json())
     .then(reviews => this.setState({reviews: reviews}))
   }
@@ -34,7 +36,6 @@ class ReviewContainer extends Component {
     const reviewCards = this.props.books.map(book => <ReviewCard />)
     return(
       <div>
-        <ReviewForm />
         {reviewCards}
       </div>
     )

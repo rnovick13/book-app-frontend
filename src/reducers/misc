@@ -77,3 +77,77 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {fetchAllBooks}, {displayBook})(BookContainer)
+
+
+favorite = (animal) => {
+  this.setState({favorites: [...this.state.favorites, animal]})
+}
+
+unfavorite = (animalId) => {
+  this.setState({favorites: this.state.favorites.filter(animal => animal.id != animalId)})
+}
+
+
+
+import React, {Component} from 'react'
+import BookCard from '../components/BookCard'
+import {connect} from 'react-redux'
+import fetchAllBooks from '../actions/fetchAllBooks'
+import displayBook from '../actions/displayBook'
+
+
+class BookContainer extends Component {
+
+  componentDidMount(){
+    this.props.fetchAllBooks()
+  }
+
+  render() {
+    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} displayBook={(id)=>this.props.displayBook(id)}/>)
+    return(
+      <div>{bookCards}</div>
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    books: state.books
+  }
+}
+
+export default connect(mapStateToProps, {fetchAllBooks}, {displayBook})(BookContainer)
+
+
+import React from 'react';
+import {connect} from 'react-redux'
+
+
+
+const BookCard = ({book, displayBook}) => {
+
+  function handleOnClick(id){
+
+    this.props.displayBook(id)
+  }
+
+  function addFavorite(id){
+  this.setState({favorites: [...this.state.favorites, id]})
+  }
+
+  return(
+    <div>
+      <img height="100px" width="100px" src={book.cover} alt={book.title} onClick={() => handleOnClick(book.id)}/>
+      <p>{book.title}</p>
+      <button onClick={()=> addFavorite(book.id)}>Favorite</button>
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    favorites: state.favorites
+  }
+}
+
+export default (mapStateToProps)(BookCard);

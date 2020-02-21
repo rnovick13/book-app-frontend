@@ -1,8 +1,6 @@
 export function fetchIndBook() {
-  
+
 }
-
-
 
 getBook = (id) => {
   const url = `http://localhost:3000/books/${id}`
