@@ -5,16 +5,13 @@ import fetchAllBooks from '../actions/fetchAllBooks'
 
 class BookContainer extends Component {
 
-  testGetBook(id){
-    this.props.getBook(id)
-  }
 
   componentDidMount(){
     this.props.fetchAllBooks()
   }
 
   render() {
-    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} getBook={(id)=>this.testGetBook(id)}/>)
+    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} />)
     return(
       <div>{bookCards}</div>
     )

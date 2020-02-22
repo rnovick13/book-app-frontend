@@ -16,3 +16,9 @@
 //
 //
 // export default ReviewContainer
+// 
+// componentDidMount() {
+//   fetch(`http://localhost:3000/reviews`)
+//     .then(response => response.json())
+//     .then(books => this.setState({reviews: books}))
+// }

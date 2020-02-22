@@ -3,6 +3,8 @@ const bookReducer = (state = {books: [], favorites: [], display: null}, action) 
 
     case 'FETCH_ALL':
       return {...state, books: action.payload}
+    case 'DISPLAY_BOOK':
+      return {...state, display: action.payload}
     default:
       return state
   }

@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import DisplayCard from '../components/DisplayCard'
 import BlankDisplayCard from '../components/BlankDisplayCard'
+import {connect} from 'react-redux'
 
 class DisplayContainer extends Component {
 
   render() {
-    const display = this.props.book;
+    const display = this.props.display;
     let container;
 
     if (display === null) {
@@ -22,5 +23,11 @@ class DisplayContainer extends Component {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    display: state.display
+  }
+}
 
-export default DisplayContainer
+
+export default connect (mapStateToProps)(DisplayContainer)

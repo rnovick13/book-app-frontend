@@ -11,7 +11,7 @@ const DisplayCard = ({book}) => {
       <h3>{book.data.attributes.title}</h3>
 
       <h3>Reviews</h3>
-      <ReviewContainer book={book.data.id} />
+      
     </div>
   )
 }

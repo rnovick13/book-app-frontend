@@ -1,12 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import display from '../actions/display'
 
 
 
-const BookCard = ({book, addFavorite, getBook}) => {
+const BookCard = ({book, addFavorite, display}) => {
 
   function handleOnClick(id){
-    
-    getBook(id)
+    display(id)
   }
 
   return(
@@ -19,4 +20,4 @@ const BookCard = ({book, addFavorite, getBook}) => {
 }
 
 
-export default BookCard;
+export default connect (null, {display})(BookCard);
