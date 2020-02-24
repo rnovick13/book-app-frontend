@@ -32,11 +32,18 @@ class ReviewContainer extends Component {
   render() {
     const showForm = this.state.showForm;
     let button;
+    let form;
 
     if (showForm) {
       button = <CloseFormButton  onClick={this.handleCloseClick}/>;
     } else {
       button = <NewReviewButton  onClick={this.handleNewClick}/>;
+    }
+
+    if (showForm) {
+      form = <CreateReviewForm id = {this.props.display.data.attributes.id}/>
+    } else {
+      form = ""
     }
 
     let book = this.props.display.data.attributes.id;
@@ -45,6 +52,7 @@ class ReviewContainer extends Component {
     return(
       <div>
         {button}
+        {form}
         {reviewCards}
       </div>
     )
