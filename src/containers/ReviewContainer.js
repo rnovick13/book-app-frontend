@@ -12,10 +12,10 @@ class ReviewContainer extends Component {
 
   render() {
     let book = this.props.display.data.attributes.id;
-    debugger
-    // const reviewCards = book.map(book => <ReviewCard />)
+    let reviews = this.props.reviews.filter(review => review.book_id === book)
+    const reviewCards = reviews.map(review => <ReviewCard key={review.id} review={review}/>)
     return(
-      <div>{"reviewCards"}</div>
+      <div>{reviewCards}</div>
     )
   }
 }
