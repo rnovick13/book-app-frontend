@@ -11,7 +11,8 @@ class ReviewContainer extends Component {
   }
 
   render() {
-    let book = this.props.display;
+    let book = this.props.display.data.attributes.id;
+    debugger
     // const reviewCards = book.map(book => <ReviewCard />)
     return(
       <div>{"reviewCards"}</div>
