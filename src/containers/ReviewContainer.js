@@ -32,7 +32,6 @@ class ReviewContainer extends Component {
   render() {
     const showForm = this.state.showForm;
     let button;
-    let container;
 
     if (showForm) {
       button = <CloseFormButton  onClick={this.handleCloseClick}/>;

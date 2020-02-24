@@ -1,9 +1,15 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
 class CreateReviewForm extends Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      name: "",
+      body: "".
+      book_id:
+    }
   }
 
   handleSubmit(event) {
@@ -25,10 +31,10 @@ class CreateReviewForm extends Component {
         <label htmlFor="body">Write Your Review:</label>
         <input id="birthdate" name="birthdate" type="text" />
 
-        <button>Send data!</button>
+        <button>Submit</button>
       </form>
     );
   }
 }
 
-export default CreateReviewForm
+export default connect(mapStateToProps)(CreateReviewForm)
