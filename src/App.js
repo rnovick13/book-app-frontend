@@ -5,10 +5,6 @@ import DisplayContainer from './containers/DisplayContainer'
 
 class App extends Component {
 
-  constructor() {
-    super()
-  }
-
   render() {
     return(
       <div className="App">
