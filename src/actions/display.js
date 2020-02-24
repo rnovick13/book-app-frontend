@@ -1,6 +1,5 @@
 export default function display(id) {
 
-  console.log("Found the book")
   return (dispatch) => {
     fetch(`http://localhost:3000/books/${id}`)
       .then(response => response.json())
