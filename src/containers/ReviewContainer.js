@@ -15,7 +15,10 @@ class ReviewContainer extends Component {
     let reviews = this.props.reviews.filter(review => review.book_id === book)
     const reviewCards = reviews.map(review => <ReviewCard key={review.id} review={review}/>)
     return(
-      <div>{reviewCards}</div>
+      <div>
+        <button>Add New Review</button>
+        {reviewCards}
+      </div>
     )
   }
 }
