@@ -11,10 +11,10 @@ class ReviewContainer extends Component {
   }
 
   render() {
-    let book = this.state.display;
-    const reviewCards = this.props.books.map(book => <ReviewCard />)
+    let book = this.props.display;
+    // const reviewCards = book.map(book => <ReviewCard />)
     return(
-      <div>{reviewCards}</div>
+      <div>{"reviewCards"}</div>
     )
   }
 }
