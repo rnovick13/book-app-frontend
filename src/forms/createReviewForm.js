@@ -6,6 +6,8 @@ class CreateReviewForm extends Component {
 
   constructor() {
     super();
+    this.handleNameChange = this.handleNameChange.bind(this)
+    this.handleBodyChange = this.handleBodyChange.bind(this)
     this.state = {
       name: "",
       body: "",
@@ -31,9 +33,11 @@ class CreateReviewForm extends Component {
     }
   }
 
+
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addReview(event)
+    this.props.addReview(this.state)
+    
   }
 
   render() {

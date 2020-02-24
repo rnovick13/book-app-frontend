@@ -1,17 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import deleteFavorite from '../actions/deleteFavorite'
 
 
-const FavoriteCard = ({favorite}) => {
+const FavoriteCard = ({favorite, deleteFavorite}) => {
 
   return(
     <div>
-      <img height="100px" width="100px" src={favorite.book_id.cover} alt={favorite.book_id.title} />
-      <p>{favorite.book_id.title}</p>
-      <p>{favorite.book_id.author_id.name}</p>
-      <button>Reviews</button>
+      <img height="100px" width="100px" src={favorite.cover} alt={favorite.title} />
+      <p>{favorite.title}</p>
+      <button>Remove From Favorites</button>
     </div>
   )
 }
 
 
-export default FavoriteCard;
+export default connect(null, {deleteFavorite})(FavoriteCard);
