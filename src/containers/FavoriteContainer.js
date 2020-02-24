@@ -1,20 +1,32 @@
 import React, {Component} from 'react'
 import FavoriteCard from '../components/FavoriteCard'
+import {connect} from 'react-redux'
 
 class FavoriteContainer extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-      favorites: []
-    }
-  }
+
+
   render() {
-    const faveCards = this.state.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
+    let favorites = this.props.favorites
+    let container
+    const faveCards = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
+
+    if (favorites.length > 0) {
+      container = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
+    } else {
+
+    }
+
     return(
-      <div>{faveCards}</div>
+      <div>{container}</div>
     )
   }
 }
 
-export default FavoriteContainer
+const mapStateToProps = (state) => {
+  return {
+    favorites: state.favorites
+  }
+}
+
+export default connect (mapStateToProps)(FavoriteContainer)
