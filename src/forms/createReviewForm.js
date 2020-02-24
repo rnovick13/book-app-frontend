@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import addReview from '../actions/addReview'
 
 class CreateReviewForm extends Component {
 
@@ -6,26 +8,38 @@ class CreateReviewForm extends Component {
     super();
     this.state = {
       name: "",
-      body: ""
+      body: "",
+      book_id: ""
+    }
+  }
+
+  componentDidMount(){
+    this.setState = {
+      book_id: this.props.display.id
     }
   }
 
   handleNameChange(event) {
-    this.setState({
+    this.setState = {
       name: event.target.value
-    })
+    }
   }
 
   handleBodyChange(event) {
-    this.setState({
+    this.setState = {
       body: event.target.value
-    })
+    }
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.addReview(event)
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <p>
             <label>Name</label>
             <input type="text" onChange={(event) => this.handleNameChange(event)}/>
@@ -40,4 +54,10 @@ class CreateReviewForm extends Component {
 
 }
 
-export default CreateReviewForm
+const mapStateToProps = (state) => {
+  return {
+    display: state.display
+  }
+}
+
+export default connect (mapStateToProps, {addReview})(CreateReviewForm)
