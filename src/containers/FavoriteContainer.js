@@ -9,12 +9,12 @@ class FavoriteContainer extends Component {
   render() {
     let favorites = this.props.favorites
     let container
-    const faveCards = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
+    // const faveCards = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
 
     if (favorites.length > 0) {
       container = this.props.favorites.map(favorite => <FavoriteCard key={favorite.id} book={favorite.book_id}/>)
     } else {
-
+      container = "Add some favorites!"
     }
 
     return(

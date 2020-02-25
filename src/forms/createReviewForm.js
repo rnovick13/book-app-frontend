@@ -16,28 +16,26 @@ class CreateReviewForm extends Component {
   }
 
   componentDidMount(){
-    this.setState = {
-      book_id: this.props.display.id
-    }
+    // debugger
+    this.setState({
+      book_id: this.props.display.data.id
+    })
   }
 
-  handleNameChange(event) {
-    this.setState = {
-      name: event.target.value
-    }
+  handleNameChange = (event) => {
+    console.log(this)
+    this.setState({name: event.target.value})
   }
 
   handleBodyChange(event) {
-    this.setState = {
-      body: event.target.value
-    }
+    this.setState({body: event.target.value})
   }
 
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.addReview(this.state)
-    
+
   }
 
   render() {
@@ -45,10 +43,13 @@ class CreateReviewForm extends Component {
       <div>
         <form onSubmit={event => this.handleSubmit(event)}>
           <p>
+
             <label>Name</label>
-            <input type="text" onChange={(event) => this.handleNameChange(event)}/>
+            <input type="text" value={this.state.name} onChange={this.handleNameChange}/>
+
             <label>Write Your Review</label>
-            <input type="text" onChange={(event) => this.handleBodyChange(event)}/>
+            <input type="text" value={this.state.body} onChange={(event) => this.handleBodyChange(event)}/>
+
           </p>
           <input type="submit" />
         </form>

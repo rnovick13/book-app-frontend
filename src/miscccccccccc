@@ -1,0 +1,45 @@
+import React from 'react';
+import {connect} from 'react-redux'
+import deleteFavorite from '../actions/deleteFavorite'
+
+
+const FavoriteCard = ({favorite, deleteFavorite}) => {
+  constructor(){
+    super()
+    this.state = {
+      book: {}
+    }
+  }
+  componentDidMount(){
+    findBook(this.props.favorites.book_id)
+  }
+  findBook(id){
+    fetch(`http://localhost:3000/books/${id}`)
+      .then(response => response.json())
+      .then(resp => {
+        this.setState({
+
+        })
+      })
+  }
+  return(
+    <div>
+      <img height="100px" width="100px" src={favorite.cover} alt={favorite.title} />
+      <p>{"title"}</p>
+      <button>Remove From Favorites</button>
+    </div>
+  )
+}
+
+
+export default connect(null, {deleteFavorite})(FavoriteCard);
+
+
+
+
+fetch(`http://localhost:3000/books/${id}`)
+  .then(response => response.json())
+  .then(resp => this.setState({
+      book: resp
+    })
+  )
