@@ -1,7 +1,6 @@
 export default function addReview(review){
 
   return (dispatch) => {
-    // debugger
     fetch('http://localhost:3000/reviews', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},

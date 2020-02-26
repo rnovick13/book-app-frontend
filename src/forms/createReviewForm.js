@@ -16,7 +16,6 @@ class CreateReviewForm extends Component {
   }
 
   componentDidMount(){
-    // debugger
     this.setState({
       book_id: this.props.display.data.id
     })
@@ -45,10 +44,18 @@ class CreateReviewForm extends Component {
           <p>
 
             <label>Name</label>
-            <input type="text" value={this.state.name} onChange={this.handleNameChange}/>
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleNameChange}
+              />
 
             <label>Write Your Review</label>
-            <input type="text" value={this.state.body} onChange={(event) => this.handleBodyChange(event)}/>
+            <input
+              type="text"
+              value={this.state.body}
+              onChange={(event) => this.handleBodyChange(event)}
+              />
 
           </p>
           <input type="submit" />
