@@ -103,4 +103,5 @@ grid-gap: 1rem;
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
+  opacity: 0.80;
 }

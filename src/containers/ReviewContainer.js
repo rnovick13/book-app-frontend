@@ -62,7 +62,7 @@ class ReviewContainer extends Component {
 
 function NewReviewButton(props) {
   return (
-    <button onClick={props.onClick}>
+    <button className="button" onClick={props.onClick}>
       Add New Review
     </button>
   );
@@ -70,7 +70,7 @@ function NewReviewButton(props) {
 
 function CloseFormButton(props) {
   return (
-    <button onClick={props.onClick}>
+    <button className="button" onClick={props.onClick}>
       Close Form
     </button>
   );
