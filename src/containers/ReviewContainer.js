@@ -36,9 +36,9 @@ class ReviewContainer extends Component {
     let form;
 
     if (showForm) {
-      button = <CloseFormButton  onClick={this.handleCloseClick}/>;
+      button = <CloseFormButton class="button" onClick={this.handleCloseClick}/>;
     } else {
-      button = <NewReviewButton  onClick={this.handleNewClick}/>;
+      button = <NewReviewButton class="button" onClick={this.handleNewClick}/>;
     }
 
     if (showForm) {
