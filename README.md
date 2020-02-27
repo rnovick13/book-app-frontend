@@ -1,3 +1,13 @@
-This is the first section of a much larger site. This application lets users track the books they've read, put them in lists, mark their favorites, and add reviews and comments.
+This is the first section of a much larger site. This application currently lets users add and delete reviews for the listed books. Eventually, the app will let users track the books they've read, put them in lists, and mark their favorites.
 
-Created by Rachel Novick 2019
+The data used in this application is from seed data but will soon link to external APIs with more content.
+
+Backend fount at https://github.com/rnovick13/book-app-backend
+
+To run application, make sure backend is running, then run
+
+npm install
+
+npm start
+
+Created by Rachel Novick 2020
