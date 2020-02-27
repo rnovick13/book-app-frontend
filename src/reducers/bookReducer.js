@@ -10,7 +10,8 @@ const bookReducer = (state = {books: [], favorites: [], display: null, reviews: 
     case 'ADD_REVIEW':
       return {...state, reviews: [...state.reviews, action.payload]}
     case 'DELETE_REVIEW':
-      return {...state, reviews: state.reviews.filter(review => review !== action.payload)}
+      const reviews = state.reviews.filter(review => review.id !== action.payload)
+      return {...state, reviews: reviews}
     case 'EDIT_REVIEW':
       return {...state}
     case 'FETCH_FAVORITES':

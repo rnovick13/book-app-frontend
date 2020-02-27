@@ -14,7 +14,7 @@ const ReviewCard = ({review, deleteReview}) => {
     <div>
       <h4>{review.name}</h4>
       <p>{review.body}</p>
-      <button onClick={() => handleOnClick(review.book_id)}>Delete</button>
+      <button onClick={() => handleOnClick(review.id)}>Delete</button>
     </div>
   )
 }

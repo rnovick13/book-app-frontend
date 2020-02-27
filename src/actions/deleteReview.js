@@ -1,13 +1,14 @@
 export default function deleteReview(id){
 
   return (dispatch) => {
+    // debugger
 
     fetch(`http://localhost:3000/reviews/${id}`, {
       method: 'DELETE'
     })
     .then(r => r.json())
-    .then(review =>{
-      dispatch({type: 'DELETE_REVIEW', payload: review})
+    .then(r =>{
+      dispatch({type: 'DELETE_REVIEW', payload: id})
     })
   }
 }
