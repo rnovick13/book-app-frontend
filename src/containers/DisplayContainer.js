@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../App.css';
 import DisplayCard from '../components/DisplayCard'
 import BlankDisplayCard from '../components/BlankDisplayCard'
 import {connect} from 'react-redux'

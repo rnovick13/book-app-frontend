@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BookContainer from './BookContainer'
 import FavoriteContainer from './FavoriteContainer'
+import '../App.css';
 
 class HomeContainer extends Component {
     constructor(props) {

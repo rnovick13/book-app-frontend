@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../App.css';
 import BookCard from '../components/BookCard'
 import {connect} from 'react-redux'
 import fetchAllBooks from '../actions/fetchAllBooks'
@@ -13,9 +14,9 @@ class BookContainer extends Component {
   }
 
   render() {
-    const bookCards = this.props.books.map(book => <BookCard key={book.title} book={book} />)
+    const bookCards = this.props.books.map(book => <BookCard class="card" key={book.title} book={book} />)
     return(
-      <div>{bookCards}</div>
+      <div class="cards">{bookCards}</div>
     )
   }
 }

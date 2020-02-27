@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 import {connect} from 'react-redux'
 import display from '../actions/display'
 
@@ -16,9 +17,9 @@ const BookCard = ({book, display}) => {
   }
 
   return(
-    <div>
-      <img height="100px" width="100px" src={book.cover} alt={book.title} onClick={() => handleOnClick(book.id)}/>
-      <p>{book.title}</p>
+    <div className="card">
+      <img class="cover" src={book.cover} alt={book.title} onClick={() => handleOnClick(book.id)}/>
+      <p class="title">{book.title}</p>
       <button onClick={() => addFavorite(book)}>Favorite</button>
     </div>
   )

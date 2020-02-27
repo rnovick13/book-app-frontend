@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../App.css'
 import ReviewCard from '../components/ReviewCard'
 import {connect} from 'react-redux'
 import fetchReview from '../actions/fetchReview'

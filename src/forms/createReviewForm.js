@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../App.css'
 import {connect} from 'react-redux'
 import addReview from '../actions/addReview'
 
@@ -39,7 +40,7 @@ class CreateReviewForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="review-form">
         <form onSubmit={event => this.handleSubmit(event)}>
           <p>
 
@@ -53,6 +54,7 @@ class CreateReviewForm extends Component {
             <label>Write Your Review</label>
             <input
               type="text"
+              className="field"
               value={this.state.body}
               onChange={(event) => this.handleBodyChange(event)}
               />

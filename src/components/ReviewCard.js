@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 import {connect} from 'react-redux'
 import deleteReview from '../actions/deleteReview'
 
@@ -11,7 +12,7 @@ const ReviewCard = ({review, deleteReview}) => {
   }
 
   return(
-    <div>
+    <div className="review">
       <h4>{review.name}</h4>
       <p>{review.body}</p>
       <button onClick={() => handleOnClick(review.id)}>Delete</button>
