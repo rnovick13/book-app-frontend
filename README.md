@@ -4,7 +4,7 @@ The data used in this application is from seed data but will soon link to extern
 
 Backend fount at https://github.com/rnovick13/book-app-backend
 
-To run application, make sure backend is running, then run
+To run application, make sure backend is running, make sure you are using the most recent version of nvm, then run
 
 npm install
 
