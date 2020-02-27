@@ -12,22 +12,12 @@ const BookCard = ({book, display}) => {
     display(id)
   }
 
-  function addFavorite(){
-    console.log({book})
-  }
-
   return(
     <div className="card">
       <img class="cover" src={book.cover} alt={book.title} onClick={() => handleOnClick(book.id)}/>
       <p class="title">{book.title}</p>
-      <button onClick={() => addFavorite(book)}>Favorite</button>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    favorites: state.favorites
-  }
-}
-export default connect (mapStateToProps, {display})(BookCard);
+export default connect (null, {display})(BookCard);

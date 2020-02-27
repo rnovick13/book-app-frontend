@@ -22,29 +22,30 @@ class HomeContainer extends Component {
     }
 
     render() {
-      const showBook = this.state.showBook;
-      let button;
-      let container;
+      // const showBook = this.state.showBook;
+      // let button;
+      // let container;
+      //
+      // if (showBook) {
+      //   button = <FavoriteButton onClick={this.handleFavoriteClick} />;
+      // } else {
+      //   button = <BookButton onClick={this.handleBookClick} />;
+      // }
+      //
+      // if (showBook) {
+      //   container = <BookContainer
+      //     books={this.props.books}
+      //     addFavorite={this.props.addFavorite} />;
+      // } else {
+      //   container = <FavoriteContainer favorites={this.props.favorites}/>;
+      // }
 
-      if (showBook) {
-        button = <FavoriteButton onClick={this.handleFavoriteClick} />;
-      } else {
-        button = <BookButton onClick={this.handleBookClick} />;
-      }
-
-      if (showBook) {
-        container = <BookContainer
-          books={this.props.books}
-          addFavorite={this.props.addFavorite} />;
-      } else {
-        container = <FavoriteContainer favorites={this.props.favorites}/>;
-      }
-
+      // <Heading showBook={showBook} />
+      // {button}
+      
       return (
         <div>
-          <Heading showBook={showBook} />
-          {button}
-          {container}
+          <BookContainer books={this.props.books}/>
         </div>
       );
     }
