@@ -13,5 +13,4 @@
 //   }
 
 
-
 return {...state, reviews: state.reviews.filter(review => review.id !== action.payload)}
