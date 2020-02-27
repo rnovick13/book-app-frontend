@@ -1,21 +1,25 @@
 .App {
+  /* font-family: "Lucida Console", Monaco, monospace; */
   /* text-align: center; */
   /* background-color: #FFF8DC; */
 }
 .full{
   background-image: url("./images/bharath-g-s-aLGiPJ4XRO4-unsplash.jpg");
-  /* background-color: #FFFFF0; */
 }
 
 .App-header {
   align: center;
   text-align: center;
-  background-color: #E6E6FA;
-  opacity: 0.75;
+  /* background-image: url('./images/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg'); */
+  /* background-color: #E6E6FA; */
+  /* opacity: 0.5; */
   margin: auto;
   height: 100px;
-  width: 200px;
+  /* width: 200px; */
   padding-top: 10px;
+  font-weight: bold;
+  font-size: large;
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 .Book-list {
