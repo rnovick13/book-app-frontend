@@ -11,6 +11,3 @@
 //     .then(response => response.json())
 //     .then(book => this.setState({display: book}))
 //   }
-
-
-return {...state, reviews: state.reviews.filter(review => review.id !== action.payload)}
