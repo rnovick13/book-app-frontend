@@ -8,9 +8,14 @@
 }
 
 .App-header {
+  align: center;
   text-align: center;
-  /* background-image: url("./images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg") */
-  /* font-size: 2vw; */
+  background-color: #E6E6FA;
+  opacity: 0.75;
+  margin: auto;
+  height: 100px;
+  width: 200px;
+  padding-top: 10px;
 }
 
 .Book-list {
@@ -52,7 +57,7 @@ grid-gap: 1rem;
 
 .cover {
     width:  100px;
-    height: 100px;
+    height: 150px;
     background-size: cover;
 }
 
@@ -67,9 +72,11 @@ grid-gap: 1rem;
 
 .review {
   align: center;
+  margin: auto;
   background-image: url("./images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg");
   border-style: solid;
-  width: 1000px;
+  border-color: #B0C4DE;
+  width: 500px;
 }
 
 .review-form {
